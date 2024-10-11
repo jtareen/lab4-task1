@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lab4_task1/widgets/custom_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -9,30 +8,33 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Lab 4 Task 1',
+          'Basic Widget Tree',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
-        backgroundColor: Colors.amber,
         centerTitle: true,
+        backgroundColor: Colors.red[300],
       ),
-      body: SingleChildScrollView(
-        child: Center(
-            child: Column(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SizedBox(height: 20),
             const Text(
-              'Hello EveryOne',
-              style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+              'Hello, There!',
+              style: TextStyle(fontSize: 24),
             ),
-            const SizedBox(
-              height: 30,
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text('Press Me'),
             ),
-            customCard(Icons.star_border_outlined),
-            customCard(Icons.accessibility_outlined),
-            customCard(Icons.yard_outlined),
-            customCard(Icons.hail_outlined),
+            const SizedBox(height: 20),
+            const Icon(
+              Icons.favorite,
+              color: Colors.red,
+              size: 48.0,
+            ),
           ],
-        )),
+        ),
       ),
     );
   }
